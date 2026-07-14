@@ -18,7 +18,7 @@ export default function Courses() {
       skills: ["Strategic Planning", "Business Leadership", "Operations Management", "Organizational Behavior", "Finance Basics", "Marketing Strategy", "Performance Audits"]
     },
     {
-      title: "Logistics & Supply Chain Management",
+      title: "Logistics & Supply Chain Management Courses",
       duration: "Certification",
       color: "python-theme",
       icon: (
@@ -57,7 +57,7 @@ export default function Courses() {
       skills: ["Project Lifecycle", "PMP Preparation", "Agile & Scrum Planning", "Resource Scheduling", "Risk Management", "Budget Optimization", "Team Leadership"]
     },
     {
-      title: "Technical Courses & Computer Programming",
+      title: "Technical and Programming Courses",
       duration: "Core Tech",
       color: "ml-theme",
       icon: (
@@ -69,7 +69,7 @@ export default function Courses() {
       skills: ["Logic & Algorithms", "Computer Programming", "Software Systems", "Databases & SQL", "Systems Architecture", "API Configurations", "Technical Deployments"]
     },
     {
-      title: "Excel & Functional Analytics",
+      title: "Advanced Excel Course",
       duration: "Data Insights",
       color: "testing-theme",
       icon: (
@@ -79,32 +79,43 @@ export default function Courses() {
           <line x1="6" y1="20" x2="6" y2="14"></line>
         </svg>
       ),
-      skills: ["Advanced Excel", "Formulas & Pivot Tables", "Functional Analytics", "Business Dashboards", "Statistical Reporting", "Data Modeling", "Predictive Analytics"]
+      skills: ["Advanced Formulas", "VBA & Macros", "Power Query", "Pivot Charts", "Data Visualizations", "Data Modeling", "Dashboard Reporting"]
     },
     {
-      title: "Management Education Consulting",
-      duration: "Institutional",
+      title: "Data/ Business and Functional Analytics",
+      duration: "Advanced Analytics",
+      color: "ds-theme",
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+          <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+        </svg>
+      ),
+      skills: ["Business Analytics", "Functional Analytics", "Statistical Modeling", "Predictive Forecasting", "Data Visualisation", "Python/R Analytics", "Market Trends Analytics"]
+    },
+    {
+      title: "Digital Marketing Courses",
+      duration: "Marketing Tech",
       color: "java-theme",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
         </svg>
       ),
-      skills: ["Education Consulting", "Curriculum Architecture", "Pedagogical Design", "Academic Leadership", "Institutional Strategy", "Accreditation Support", "Learning Management"]
+      skills: ["SEO Optimization", "Search Engine Marketing", "Social Media Branding", "Content Creation", "Google Analytics", "Email Campaigns", "Digital Operations"]
     },
     {
-      title: "Consulting, Training & Service Management",
-      duration: "Corporate Services",
+      title: "Computerized Accounting Courses",
+      duration: "Fin-Tech",
       color: "python-theme",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M21 16V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"></path>
-          <line x1="12" y1="18" x2="12" y2="22"></line>
-          <line x1="8" y1="22" x2="16" y2="22"></line>
+          <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+          <line x1="2" y1="10" x2="22" y2="10"></line>
+          <line x1="12" y1="4" x2="12" y2="20"></line>
         </svg>
       ),
-      skills: ["Corporate Training", "Operations Advisory", "Service Management", "SLA Configurations", "Quality Assurance", "Process Outsourcing", "Managing & Delivery"]
+      skills: ["Tally & GST", "Bookkeeping Systems", "Financial Audits", "Taxation Principles", "Inventory Accounting", "Voucher Entry", "Balance Sheet Finalization"]
     }
   ];
 

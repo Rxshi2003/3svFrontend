@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import logoImg from '../assets/images/3SVlogo.jpg';
 
 export default function Navbar({ activeSection, onNavClick }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,18 +15,19 @@ export default function Navbar({ activeSection, onNavClick }) {
       label: 'Services', 
       target: 'services',
       dropdownItems: [
-        { label: 'Consultancy', target: 'services' },
-        { label: 'Corporate Training', target: 'services' },
-        { label: 'Entrepreneurship', target: 'services' },
-        { label: 'Projects', target: 'services' },
-        { label: 'Research & Development', target: 'services' }
+        { label: 'Consultancy', target: 'services/consulting' },
+        { label: 'Corporate Training', target: 'services/corporate-training' },
+        { label: 'Entrepreneurship', target: 'services/entrepreneurship' },
+        { label: 'Projects', target: 'services/projects' },
+        { label: 'Research & Development', target: 'services/research-development' },
+        { label: 'Center of Excellence', target: 'services/center-of-excellence' }
       ]
     },
     { 
       label: 'Placement', 
       target: 'placement',
       dropdownItems: [
-        { label: 'Corporate Resources Center', target: 'placement' }
+        { label: 'Corporate Resources Center', target: 'placement/crc' }
       ]
     },
     { label: 'Gallery', target: 'gallery' },
@@ -79,37 +81,7 @@ export default function Navbar({ activeSection, onNavClick }) {
       <nav className="main-navbar">
         <div className="navbar-container">
           <div className="logo-area" onClick={() => handleLinkClick('home')}>
-            <div className="logo-image-svg">
-              <svg width="220" height="52" viewBox="0 0 220 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* 3 Gears */}
-                <circle cx="14" cy="30" r="5" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="2 2" fill="none"/>
-                <circle cx="24" cy="24" r="4" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="2 2" fill="none"/>
-                <circle cx="20" cy="36" r="4" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="2 2" fill="none"/>
-                
-                {/* Blue Graduate Figure */}
-                <circle cx="28" cy="14" r="3" fill="#0055d4" />
-                <polygon points="28,8 21,11 28,14 35,11" fill="#0033aa" />
-                <rect x="27" y="11" width="2" height="1.5" fill="#0033aa" />
-                <line x1="33" y1="12" x2="34" y2="15" stroke="#0033aa" strokeWidth="0.8" />
-                <path d="M 17,39 C 23,37 31,32 31,21 C 31,18 29,18 27,19 C 27,27 22,32 14,34 C 13,37 15,39 17,39 Z" fill="#002288" />
-                
-                {/* Red 3S Text */}
-                <text x="44" y="32" fontFamily="'Outfit', sans-serif" fontWeight="900" fontSize="24" fill="#dc2626">3S</text>
-                {/* V with red arrow head */}
-                <path d="M 70,18 L 76,32 L 82,14 L 86,14 L 79,35 L 73,35 L 66,18 Z" fill="#dc2626"/>
-                <polygon points="80,14 86,9 86,16" fill="#dc2626"/>
-                
-                {/* S-dot */}
-                <circle cx="68" cy="31" r="3" fill="#f59e0b"/>
-                
-                {/* EDUMENTORS & CONSULTANTS text */}
-                <text x="94" y="21" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" fontSize="8.5" fill="#0033aa">EDUMENTORS &</text>
-                <text x="94" y="31" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" fontSize="8.5" fill="#0033aa">CONSULTANTS</text>
-                
-                {/* Tagline: Research | Innovation | Incubation */}
-                <text x="44" y="44" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="600" fontSize="7" fill="#475569">Research | Innovation | Incubation</text>
-              </svg>
-            </div>
+            <img src={logoImg} alt="3SV Edumentors & Consultants Logo" style={{ height: '55px', borderRadius: '4px', objectFit: 'contain' }} />
           </div>
 
           {/* Desktop Nav Links */}

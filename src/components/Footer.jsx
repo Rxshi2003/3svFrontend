@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import logoImg from '../assets/images/3SVlogo.jpg';
 
 export default function Footer({ onNavClick }) {
   const handleLinkClick = (target) => {
@@ -12,35 +13,7 @@ export default function Footer({ onNavClick }) {
         {/* Col 1: Brand details */}
         <div className="footer-col brand-col">
           <div className="footer-logo" onClick={() => handleLinkClick('home')}>
-            <svg width="180" height="42" viewBox="0 0 220 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* 3 Gears */}
-              <circle cx="14" cy="30" r="5" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="2 2" fill="none"/>
-              <circle cx="24" cy="24" r="4" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="2 2" fill="none"/>
-              <circle cx="20" cy="36" r="4" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="2 2" fill="none"/>
-              
-              {/* Blue Graduate Figure */}
-              <circle cx="28" cy="14" r="3" fill="#0055d4" />
-              <polygon points="28,8 21,11 28,14 35,11" fill="#0033aa" />
-              <rect x="27" y="11" width="2" height="1.5" fill="#0033aa" />
-              <line x1="33" y1="12" x2="34" y2="15" stroke="#0033aa" strokeWidth="0.8" />
-              <path d="M 17,39 C 23,37 31,32 31,21 C 31,18 29,18 27,19 C 27,27 22,32 14,34 C 13,37 15,39 17,39 Z" fill="#002288" />
-              
-              {/* Red 3S Text */}
-              <text x="44" y="32" fontFamily="'Outfit', sans-serif" fontWeight="900" fontSize="24" fill="#dc2626">3S</text>
-              {/* V with red arrow head */}
-              <path d="M 70,18 L 76,32 L 82,14 L 86,14 L 79,35 L 73,35 L 66,18 Z" fill="#dc2626"/>
-              <polygon points="80,14 86,9 86,16" fill="#dc2626"/>
-              
-              {/* S-dot */}
-              <circle cx="68" cy="31" r="3" fill="#f59e0b"/>
-              
-              {/* EDUMENTORS & CONSULTANTS text */}
-              <text x="94" y="21" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" fontSize="8.5" fill="#0033aa">EDUMENTORS &</text>
-              <text x="94" y="31" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" fontSize="8.5" fill="#0033aa">CONSULTANTS</text>
-              
-              {/* Tagline: Research | Innovation | Incubation */}
-              <text x="44" y="44" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="600" fontSize="7" fill="#cbd5e1">Research | Innovation | Incubation</text>
-            </svg>
+            <img src={logoImg} alt="3SV Edumentors & Consultants Logo" style={{ height: '55px', borderRadius: '4px', objectFit: 'contain' }} />
           </div>
           <p className="brand-tagline-footer">Research | Innovation | Incubation</p>
           <p className="brand-description-footer">
@@ -53,23 +26,21 @@ export default function Footer({ onNavClick }) {
           <h4>Management Tracks</h4>
           <ul>
             <li><button onClick={() => handleLinkClick('courses')}>Management Courses</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Logistics & Supply Chain</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Lean & Six Sigma</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Project Management</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Management Education Consulting</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Logistics & Supply Chain Courses</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Lean & Six Sigma Course</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Project Management Courses</button></li>
           </ul>
         </div>
 
         {/* Col 3: Course Catalog 2 */}
         <div className="footer-col list-col">
-          <h4>Technical & Consulting</h4>
+          <h4>Technical & Analytics</h4>
           <ul>
-            <li><button onClick={() => handleLinkClick('courses')}>Technical Courses</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Computer Programming</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Excel Course</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Functional Analytics</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Certificate Courses</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Training & Service Management</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Technical and Programming Courses</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Advanced Excel Course</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Data/ Business and Functional Analytics</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Digital Marketing Courses</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Computerized Accounting Courses</button></li>
           </ul>
         </div>
 

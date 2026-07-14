@@ -79,8 +79,7 @@ export default function Hero() {
               </svg>
             </button>
             <button className="outline-btn" onClick={() => {
-              const el = document.getElementById('courses');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
+              window.location.hash = '#/courses';
             }}>
               Explore Courses
             </button>
