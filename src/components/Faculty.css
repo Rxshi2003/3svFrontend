@@ -1,0 +1,176 @@
+.faculty-section {
+  background-color: white;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .faculty-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* Mentor Profile Cards */
+.faculty-card {
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  text-align: center;
+  transition: all var(--transition-normal);
+  border: 1px solid var(--border-light);
+  background-color: var(--bg-card);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faculty-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(79, 70, 229, 0.2);
+  background-color: white;
+}
+
+/* Avatar box styling */
+.faculty-avatar-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  transition: all var(--transition-normal);
+  background-color: var(--bg-main);
+  border: 2px dashed #cbd5e1;
+}
+
+.faculty-card:hover .faculty-avatar-box {
+  border-style: solid;
+  transform: scale(1.05);
+}
+
+/* Avatar variations */
+.blue-accent .faculty-avatar-box {
+  color: var(--accent);
+  background-color: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.gold-accent .faculty-avatar-box {
+  color: var(--secondary);
+  background-color: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.indigo-accent .faculty-avatar-box {
+  color: var(--primary);
+  background-color: rgba(79, 70, 229, 0.08);
+  border-color: rgba(79, 70, 229, 0.25);
+}
+
+.faculty-name {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.faculty-role {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.faculty-credentials {
+  font-size: 11.5px;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.faculty-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  margin: 10px 0;
+}
+
+.faculty-desc {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.faculty-profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 15px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--primary);
+  transition: all var(--transition-fast);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(79, 70, 229, 0.05);
+  border: 1px solid transparent;
+  width: fit-content;
+}
+
+.blue-accent .faculty-profile-link {
+  color: var(--accent);
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.gold-accent .faculty-profile-link {
+  color: var(--secondary-hover);
+  background-color: rgba(245, 158, 11, 0.05);
+}
+
+.indigo-accent .faculty-profile-link {
+  color: var(--primary);
+  background-color: rgba(79, 70, 229, 0.05);
+}
+
+.faculty-profile-link:hover {
+  background-color: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.blue-accent .faculty-profile-link:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
+.gold-accent .faculty-profile-link:hover {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.indigo-accent .faculty-profile-link:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.faculty-profile-link .link-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.faculty-profile-link:hover .link-arrow {
+  transform: translateX(3px);
+}
+

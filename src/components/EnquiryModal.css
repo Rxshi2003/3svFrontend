@@ -1,0 +1,218 @@
+/* Sticky Enquire Now tab on right side of page */
+.sticky-enquire-tab {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: right bottom;
+  background-color: #0000ff; /* Solid bright blue color matching the screenshot */
+  color: white;
+  padding: 10px 24px;
+  font-weight: 800;
+  font-size: 15px;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  border: none;
+  cursor: pointer;
+  z-index: 998;
+  letter-spacing: 1px;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.sticky-enquire-tab:hover {
+  background-color: var(--primary);
+  padding: 12px 28px;
+}
+
+/* Floating WhatsApp buttons in bottom corners */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  width: 54px;
+  height: 54px;
+  background-color: #25d366; /* WhatsApp Official Green */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  z-index: 997;
+  transition: all var(--transition-normal);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float.float-left {
+  left: 25px;
+}
+
+.whatsapp-float.float-right {
+  right: 25px;
+}
+
+/* Modal Backdrop Overlay */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Modal Box details */
+.modal-content {
+  width: 100%;
+  max-width: 460px;
+  padding: 40px;
+  border-radius: var(--radius-md);
+  position: relative;
+  background-color: white;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-light);
+  margin: 0 20px;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-btn:hover {
+  color: var(--text-dark);
+}
+
+.modal-form-wrapper h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.modal-sub {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 25px;
+}
+
+.modal-form-group {
+  margin-bottom: 18px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.modal-form-group input,
+.modal-form-group select {
+  font-family: var(--font-sans);
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #cbd5e1;
+  outline: none;
+  background-color: white;
+  color: var(--text-dark);
+  transition: all var(--transition-fast);
+}
+
+.modal-form-group input:focus,
+.modal-form-group select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.modal-submit-btn {
+  width: 100%;
+  padding: 12px;
+  justify-content: center;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+/* Success panel within modal */
+.modal-success {
+  text-align: center;
+  padding: 30px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-success-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  animation: pulseGlow 1.8s infinite;
+}
+
+.modal-success h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.modal-success p {
+  font-size: 14.5px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* Make sure float links and tabs work nicely on phones */
+@media (max-width: 576px) {
+  .whatsapp-float {
+    width: 46px;
+    height: 46px;
+    bottom: 20px;
+  }
+  .whatsapp-float svg {
+    width: 24px;
+    height: 24px;
+  }
+  .whatsapp-float.float-left {
+    left: 20px;
+  }
+  .whatsapp-float.float-right {
+    right: 20px;
+  }
+  .sticky-enquire-tab {
+    font-size: 13px;
+    padding: 8px 18px;
+  }
+  .modal-content {
+    padding: 30px 20px;
+  }
+}
