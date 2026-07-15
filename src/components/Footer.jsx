@@ -27,7 +27,7 @@ export default function Footer({ onNavClick }) {
           <ul>
             <li><button onClick={() => handleLinkClick('courses')}>Management Courses</button></li>
             <li><button onClick={() => handleLinkClick('courses')}>Logistics & Supply Chain Courses</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Lean & Six Sigma Course</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Lean Six Sigma and Quality Management Course</button></li>
             <li><button onClick={() => handleLinkClick('courses')}>Project Management Courses</button></li>
           </ul>
         </div>

@@ -32,7 +32,7 @@ export default function Courses() {
       skills: ["Supply Chain Operations", "Inventory Optimization", "Logistics & Warehousing", "Procurement Strategies", "Global Distribution", "Vendor Management", "Freight & Transport"]
     },
     {
-      title: "Lean & Six Sigma Course",
+      title: "Lean Six Sigma and Quality Management Course",
       duration: "Quality Audit",
       color: "devops-theme",
       icon: (

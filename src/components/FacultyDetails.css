@@ -140,6 +140,14 @@
   justify-content: center;
   box-shadow: var(--shadow-md);
   transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+.profile-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .blue-accent .profile-avatar-circle {

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="founder-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#founder-grad)" />
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  
+  <!-- Decorative circles -->
+  <circle cx="200" cy="150" r="120" fill="rgba(255, 255, 255, 0.03)" />
+  <circle cx="200" cy="150" r="90" fill="rgba(255, 255, 255, 0.05)" />
+  
+  <!-- Head & Shoulders silhouette -->
+  <path d="M200,210 C160,210 130,240 130,280 L130,340 C130,360 270,360 270,340 L270,280 C270,240 240,210 200,210 Z" fill="rgba(255, 255, 255, 0.1)" />
+  <circle cx="200" cy="150" r="45" fill="rgba(255, 255, 255, 0.15)" />
+  
+  <!-- Label Text -->
+  <rect x="50" y="380" width="300" height="60" rx="10" fill="rgba(255, 255, 255, 0.1)" backdrop-filter="blur(10px)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1" />
+  <text x="200" y="415" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">FOUNDER DIRECTOR</text>
+  <text x="200" y="432" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="400" fill="rgba(255, 255, 255, 0.7)" text-anchor="middle">Photograph Placeholder</text>
+</svg>

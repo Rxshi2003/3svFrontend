@@ -1,89 +1,156 @@
 import React, { useState } from 'react';
 import './Gallery.css';
 
+// Import all 18 real photos
+import img1 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-37-45.jpg';
+import img2 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-37-49.jpg';
+import img3 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-37-51.jpg';
+import img4 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-37-56.jpg';
+import img5 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-37-57.jpg';
+import img6 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-37-58.jpg';
+import img7 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-37-59.jpg';
+import img8 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-38-00.jpg';
+import img9 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-38-01.jpg';
+import img10 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-38-02.jpg';
+import img11 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-38-03.jpg';
+import img12 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-38-04.jpg';
+import img13 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-38-05.jpg';
+import img14 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-38-06.jpg';
+import img15 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-38-07.jpg';
+import img16 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2024-08-29-13-38-08.jpg';
+import img17 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2025-06-04-22-57-25.jpg';
+import img18 from '../assets/Gallery-20260715T101156Z-1-001/Gallery/PHOTO-2025-06-04-22-58-17.jpg';
+
 export default function Gallery() {
   const [filter, setFilter] = useState('all');
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const galleryItems = [
     {
       id: 1,
-      title: "Interactive Programming Lab",
+      title: "Interactive Classroom Discussion",
       category: "labs",
-      desc: "Our state-of-the-art laboratory where students solve daily coding drills under assistance.",
-      icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-          <line x1="8" y1="21" x2="16" y2="21"></line>
-          <line x1="12" y1="17" x2="12" y2="21"></line>
-        </svg>
-      ),
-      color: "gradient-blue"
+      image: img1,
+      desc: "Daily peer coding reviews and mentor-guided theory application classes."
     },
     {
       id: 2,
-      title: "Placement Celebration 2026",
-      category: "placements",
-      desc: "Honoring our graduates who secured Software Engineer roles in Top MNCs this quarter.",
-      icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-          <path d="M7 11.8V17c0 .8.8 1.5 2 2h6c1.2 0 2-.7 2-2v-5.2"></path>
-        </svg>
-      ),
-      color: "gradient-gold"
+      title: "Practical Coding Lab Session",
+      category: "labs",
+      image: img2,
+      desc: "Our state-of-the-art computer labs hosting data analytics pipelines."
     },
     {
       id: 3,
-      title: "Annual Tech Hackathon",
-      category: "events",
-      desc: "A 24-hour collaborative coding event where students build fully functional prototypes.",
-      icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <polyline points="16 18 22 12 16 6"></polyline>
-          <polyline points="8 6 2 12 8 18"></polyline>
-        </svg>
-      ),
-      color: "gradient-purple"
+      title: "Advanced Algorithms Workshop",
+      category: "labs",
+      image: img3,
+      desc: "Students testing algorithms and debugging complex programming solutions."
     },
     {
       id: 4,
-      title: "Cloud Infrastructure Setup Workshop",
-      category: "labs",
-      desc: "Hands-on configuration of secure VPCs and CI/CD runners on cloud instances.",
-      icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-        </svg>
-      ),
-      color: "gradient-cyan"
+      title: "Project Collaboration Meet",
+      category: "events",
+      image: img4,
+      desc: "Group brainstorming sessions for final capstone product developments."
     },
     {
       id: 5,
-      title: "MNC Recruiter Job Fair",
+      title: "Corporate Mentor Review",
       category: "placements",
-      desc: "On-campus interviews hosted by top-tier tech employers with direct hiring pathways.",
-      icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-          <circle cx="9" cy="7" r="4"></circle>
-          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg>
-      ),
-      color: "gradient-rose"
+      image: img5,
+      desc: "One-on-one portfolio evaluations from industry experts before drives."
     },
     {
       id: 6,
-      title: "Industry Expert Seminars",
+      title: "Mock Placement Interviews",
+      category: "placements",
+      image: img6,
+      desc: "Direct interview preparation and technical feedback round reviews."
+    },
+    {
+      id: 7,
+      title: "Technical Seminar Presentation",
       category: "events",
-      desc: "IIT/IIM alumni delivering talks on data architectures and technical job trends.",
-      icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-        </svg>
-      ),
-      color: "gradient-indigo"
+      image: img7,
+      desc: "Guest lectures addressing system scale and engineering practices."
+    },
+    {
+      id: 8,
+      title: "Industry Expert Guest Lecture",
+      category: "events",
+      image: img8,
+      desc: "Prominent industry leaders giving insights on standard processes."
+    },
+    {
+      id: 9,
+      title: "Hackathon Pitch Session",
+      category: "events",
+      image: img9,
+      desc: "Teams presenting their functional models after 24-hour sprints."
+    },
+    {
+      id: 10,
+      title: "Team Incubator Discussion",
+      category: "labs",
+      image: img10,
+      desc: "Brainstorming sessions targeting product launch metrics."
+    },
+    {
+      id: 11,
+      title: "Placement Selection Day",
+      category: "placements",
+      image: img11,
+      desc: "Students finalizing their offers and celebrating placement milestones."
+    },
+    {
+      id: 12,
+      title: "Industry-Academia Summit",
+      category: "events",
+      image: img12,
+      desc: "Keynotes on bridging modern tooling trends with standard curricula."
+    },
+    {
+      id: 13,
+      title: "Hands-on Development Practice",
+      category: "labs",
+      image: img13,
+      desc: "Individual code execution and systems verification in progress."
+    },
+    {
+      id: 14,
+      title: "Annual Placement Drive",
+      category: "placements",
+      image: img14,
+      desc: "On-campus recruiting panels selecting final batch candidates."
+    },
+    {
+      id: 15,
+      title: "Design Thinking Bootcamp",
+      category: "events",
+      image: img15,
+      desc: "Interactive workshops building creative project concepts."
+    },
+    {
+      id: 16,
+      title: "Project Mentorship Review",
+      category: "labs",
+      image: img16,
+      desc: "Deep review sessions focused on refinement and deployment paths."
+    },
+    {
+      id: 17,
+      title: "Corporate Resource Meet 2025",
+      category: "placements",
+      image: img17,
+      desc: "Honoring relationships with recruiters across prime domains."
+    },
+    {
+      id: 18,
+      title: "Grand Tech Seminar 2025",
+      category: "events",
+      image: img18,
+      desc: "Full-house keynote addressing advancements in system logic."
     }
   ];
 
@@ -95,12 +162,12 @@ export default function Gallery() {
     <section id="gallery" className="gallery-section">
       <div className="container">
         <div className="section-header">
-          <span className="section-subtitle">LIFE AT ADHYAYAN</span>
+          <span className="section-subtitle">LIFE AT 3SV</span>
           <h2 className="section-title">
             Our <span>Photo Gallery</span>
           </h2>
           <p className="section-desc">
-            Explore snapshots of interactive learning environments, student success stories, hackathons, and corporate interview drives.
+            Explore real snapshots of our hybrid learning classrooms, active R&D collaborations, student achievements, and placement drives.
           </p>
         </div>
 
@@ -135,12 +202,18 @@ export default function Gallery() {
         {/* Gallery Grid */}
         <div className="gallery-grid animate-fade-in">
           {filteredItems.map((item) => (
-            <div key={item.id} className={`gallery-card ${item.color}`}>
-              <div className="card-illustration-box">
-                {item.icon}
-              </div>
+            <div 
+              key={item.id} 
+              className="gallery-card"
+              onClick={() => setSelectedImage(item.image)}
+            >
+              <img src={item.image} alt={item.title} className="gallery-card-img" />
               <div className="gallery-card-overlay">
-                <span className="gallery-card-category">{item.category}</span>
+                <span className="gallery-card-category">
+                  {item.category === 'labs' ? 'Classroom & Labs' : 
+                   item.category === 'placements' ? 'Placements' : 
+                   'Events & Seminars'}
+                </span>
                 <h3 className="gallery-card-title">{item.title}</h3>
                 <p className="gallery-card-desc">{item.desc}</p>
               </div>
@@ -148,6 +221,21 @@ export default function Gallery() {
           ))}
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div className="lightbox-backdrop" onClick={() => setSelectedImage(null)}>
+          <div className="lightbox-container" onClick={(e) => e.stopPropagation()}>
+            <img src={selectedImage} alt="Enlarged gallery preview" className="lightbox-img" />
+            <button className="lightbox-close-btn" onClick={() => setSelectedImage(null)} aria-label="Close Lightbox">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

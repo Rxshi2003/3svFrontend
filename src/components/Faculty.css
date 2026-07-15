@@ -51,10 +51,21 @@
   transition: all var(--transition-normal);
   background-color: var(--bg-main);
   border: 2px dashed #cbd5e1;
+  overflow: hidden;
+}
+
+.faculty-avatar-box.has-image {
+  border-style: solid;
+}
+
+.faculty-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .faculty-card:hover .faculty-avatar-box {
-  border-style: solid;
   transform: scale(1.05);
 }
 
