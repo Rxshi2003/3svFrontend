@@ -4,6 +4,7 @@ import AlertBar from './components/AlertBar';
 import Footer from './components/Footer';
 import EnquiryModal from './components/EnquiryModal';
 import FacultyDetails from './components/FacultyDetails';
+import Chatbot from './components/Chatbot';
 
 // Pages
 import Home from './pages/Home';
@@ -128,8 +129,9 @@ export default function App() {
       {/* Footer details */}
       <Footer onNavClick={handleNavClick} />
 
-      {/* Floating enquiry modal & WhatsApp triggers */}
+      {/* Floating enquiry modal & Chatbot assistant */}
       <EnquiryModal />
+      <Chatbot />
     </>
   );
 }
