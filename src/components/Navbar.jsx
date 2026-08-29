@@ -2,37 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import logoImg from '../assets/images/3SVlogo.jpg';
 
-export default function Navbar({ activeSection, onNavClick }) {
+import { navItems } from '../constants/constnavbar.jsx';
+
+export default function Navbar({ activeSection, onNavClick, user, onLogout }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  const navItems = [
-    { label: 'Home', target: 'home' },
-    { label: 'About Us', target: 'about' },
-    { label: 'Courses', target: 'courses' },
-    { label: 'Faculty', target: 'faculty' },
-    { 
-      label: 'Services', 
-      target: 'services',
-      dropdownItems: [
-        { label: 'Consultancy', target: 'services/consulting' },
-        { label: 'Corporate Training', target: 'services/corporate-training' },
-        { label: 'Entrepreneurship', target: 'services/entrepreneurship' },
-        { label: 'Projects', target: 'services/projects' },
-        { label: 'Research & Development', target: 'services/research-development' },
-        { label: 'Center of Excellence', target: 'services/center-of-excellence' }
-      ]
-    },
-    { 
-      label: 'Placement', 
-      target: 'placement',
-      dropdownItems: [
-        { label: 'Corporate Resources Center', target: 'placement/crc' }
-      ]
-    },
-    { label: 'Gallery', target: 'gallery' },
-    { label: 'Contact Us', target: 'contact' }
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -119,9 +93,24 @@ export default function Navbar({ activeSection, onNavClick }) {
 
           {/* Action CTA Button */}
           <div className="nav-action">
-            <button className="nav-cta-btn" onClick={() => window.dispatchEvent(new CustomEvent('open-enquiry'))}>
-              Enquire Now
-            </button>
+            {user ? (
+              <div className="user-profile-nav" onClick={() => handleLinkClick('dashboard')} style={{ cursor: 'pointer' }}>
+                <div className="navbar-avatar-wrapper">
+                  {user.photoUrl ? (
+                    <img src={user.photoUrl} alt={user.name} className="navbar-avatar-img" />
+                  ) : (
+                    <div className="navbar-avatar-initials">
+                      {user.name.charAt(0).toUpperCase()}
+                    </div>
+                  )}
+                </div>
+                <span className="user-welcome-text"><strong>{user.name}</strong></span>
+              </div>
+            ) : (
+              <button className="nav-cta-btn" onClick={() => handleLinkClick('login')}>
+                Login / Signup
+              </button>
+            )}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -168,17 +157,28 @@ export default function Navbar({ activeSection, onNavClick }) {
                 )}
               </li>
             ))}
-            <li>
-              <button 
-                className="mobile-nav-cta" 
-                onClick={() => {
-                  setIsOpen(false);
-                  window.dispatchEvent(new CustomEvent('open-enquiry'));
-                }}
-              >
-                Enquire Now
-              </button>
-            </li>
+            {user ? (
+              <>
+                <li className="mobile-nav-item user-mobile-info">
+                  <button className="mobile-nav-btn mobile-user-btn" onClick={() => handleLinkClick('dashboard')}>
+                    <div className="navbar-avatar-wrapper-mobile">
+                      {user.photoUrl ? (
+                        <img src={user.photoUrl} alt={user.name} className="navbar-avatar-img-mobile" />
+                      ) : (
+                        <span className="navbar-avatar-initials-mobile">{user.name.charAt(0).toUpperCase()}</span>
+                      )}
+                    </div>
+                    <span className="mobile-username-text">{user.name}</span>
+                  </button>
+                </li>
+              </>
+            ) : (
+              <li>
+                <button className="mobile-nav-cta" onClick={() => handleLinkClick('login')}>
+                  Login / Signup
+                </button>
+              </li>
+            )}
           </ul>
         </div>
       </nav>

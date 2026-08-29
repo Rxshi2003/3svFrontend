@@ -2,74 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './Hero.css';
 import heroBanner from 'C:/Users/HP/.gemini/antigravity-ide/brain/8a36b3f9-f036-4342-84ec-de75fd142537/hero_banner_1783958302518.png';
 
+import { slides } from '../constants/consthero.jsx';
+
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slides = [
-    {
-      title: "Management Courses",
-      subtitle: "Optimize processes. Lead organizational growth.",
-      desc: "Acquire specialized competencies in general management, corporate governance, strategy audits, and leadership frameworks designed under expert advisory.",
-      tags: ["Strategy", "Management", "Operations", "Governance", "Leadership"],
-      badge: "Professional"
-    },
-    {
-      title: "Logistics & Supply Chain Management Courses",
-      subtitle: "Streamline inventories. Optimize logistics.",
-      desc: "Master warehouse layout structures, procurement protocols, global freight forwarding, and inventory optimization frameworks to run flawless operations.",
-      tags: ["Logistics", "Supply Chain", "Procurement", "Warehousing", "Freight"],
-      badge: "Certification"
-    },
-    {
-      title: "Lean Six Sigma and Quality Management Course",
-      subtitle: "Analyze metrics. Eliminate process waste.",
-      desc: "Learn quality control blueprints, DMAIC execution, process audits, and Kaizen improvement cycles to deliver quality services and training management.",
-      tags: ["Six Sigma", "Lean Systems", "Quality Audit", "DMAIC", "Kaizen"],
-      badge: "Quality Audit"
-    },
-    {
-      title: "Project Management Courses",
-      subtitle: "Deliver on time. Lead agile teams successfully.",
-      desc: "Develop core capabilities in project lifecycle planning, risk management, scheduling, budgeting, and PMI certification prep.",
-      tags: ["Project Management", "PMP Prep", "Agile", "Scrum", "Risk Management"],
-      badge: "PM Competency"
-    },
-    {
-      title: "Technical and Programming Courses",
-      subtitle: "Write clean code. Architect modern systems.",
-      desc: "Learn fundamental computer programming, database systems, logic buildings, API configurations, and software deployment setups.",
-      tags: ["Programming", "Coding", "Databases", "SQL", "APIs"],
-      badge: "Core Tech"
-    },
-    {
-      title: "Advanced Excel Course",
-      subtitle: "Transform raw data. Master dashboards & macros.",
-      desc: "Advance your capability with complex formulas, VBA scripts, Power Query, pivot charts, and automated reporting dashboards.",
-      tags: ["Excel", "VBA & Macros", "Power Query", "Dashboards", "Data Modeling"],
-      badge: "Data Insights"
-    },
-    {
-      title: "Data/ Business and Functional Analytics",
-      subtitle: "Make data-driven decisions. Uncover deep business insights.",
-      desc: "Study functional data analytics, statistical modeling, forecasting methods, and interactive visualizations using Python, R, and Tableau.",
-      tags: ["Analytics", "Business Intelligence", "Python", "Tableau", "Forecasting"],
-      badge: "Advanced Analytics"
-    },
-    {
-      title: "Digital Marketing Courses",
-      subtitle: "Grow online brands. Maximize reach & ROI.",
-      desc: "Master SEO strategies, search engine marketing, social media branding, content creation campaigns, and Google web analytics.",
-      tags: ["Digital Marketing", "SEO", "Branding", "Google Analytics", "SEM"],
-      badge: "Marketing Tech"
-    },
-    {
-      title: "Computerized Accounting Courses",
-      subtitle: "Manage finances. Simplify taxation & GST compliance.",
-      desc: "Gain hands-on training in Tally Prime, GST filing rules, bookkeeping records, final balance sheets, and financial auditing processes.",
-      tags: ["Accounting", "Tally Prime", "GST Compliance", "Bookkeeping", "Auditing"],
-      badge: "Fin-Tech"
-    }
-  ];
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
@@ -102,7 +38,7 @@ export default function Hero() {
                 </h1>
                 <h2 className="hero-subtitle">{slide.subtitle}</h2>
                 <p className="hero-desc">{slide.desc}</p>
-                
+
                 <div className="hero-tags">
                   {slide.tags.map((tag, tIdx) => (
                     <span key={tIdx} className="hero-tag">{tag}</span>
@@ -157,14 +93,14 @@ export default function Hero() {
         {/* Right Side: Generated Graphic Art */}
         <div className="hero-graphic">
           <div className="graphic-glow-underlay"></div>
-          <img 
-            src={heroBanner} 
-            alt="3SV Edumentors and Consultants Banner" 
+          <img
+            src={heroBanner}
+            alt="3SV Edumentors and Consultants Banner"
             className="hero-banner-img animate-float"
           />
         </div>
       </div>
-      
+
       {/* Background visual shapes */}
       <div className="bg-shape shape-1"></div>
       <div className="bg-shape shape-2"></div>

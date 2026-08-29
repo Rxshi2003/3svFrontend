@@ -23,7 +23,7 @@ export default function Welcome() {
           <p className="welcome-paragraph">
             In the education sector, we offer hybrid (online and offline) courses in Lean Six Sigma, Data Analytics, Data Science, Data Engineering, Business Analytics, and Project Management. Our programs are conducted in association with Authorized Training Partners (ATP) of the Project Management Institute (PMI), USA, providing hands-on case studies, live assignments, and direct industry mentorship.
           </p>
-          
+
           <div className="core-values-section">
             <h4 className="core-values-title">Our Core Values</h4>
             <div className="core-values-grid">
@@ -50,9 +50,9 @@ export default function Welcome() {
         {/* Right Side: Generated climb image */}
         <div className="welcome-graphic-column">
           <div className="graphic-backdrop"></div>
-          <img 
-            src={welcomeImg} 
-            alt="Climbing stairs to tech career success illustration" 
+          <img
+            src={welcomeImg}
+            alt="Climbing stairs to tech career success illustration"
             className="welcome-banner-img animate-float"
           />
         </div>

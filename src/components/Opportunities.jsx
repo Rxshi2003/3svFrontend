@@ -2,13 +2,9 @@ import React from 'react';
 import './Opportunities.css';
 import careerPathImg from 'C:/Users/HP/.gemini/antigravity-ide/brain/8a36b3f9-f036-4342-84ec-de75fd142537/career_path_1783958329881.png';
 
+import { missionPoints } from '../constants/constopportunities.jsx';
+
 export default function Opportunities() {
-  const missionPoints = [
-    "Becoming a leading Centre of Excellence of knowledge management pertaining to various aspects of industry synchronized courses and consultancy services.",
-    "Promoting industry synchronized courses through education, training, consulting, applied research, and institution-building.",
-    "Assisting in capacity building, training, and institutions in the field of industry synchronized activities with a focus on research, innovation, incubation, consultation, and digitalization.",
-    "Helping client organizations in becoming high-productivity and improved-quality firms through people work."
-  ];
 
   return (
     <section className="opportunities-section">
@@ -16,9 +12,9 @@ export default function Opportunities() {
         {/* Left Side: Generated Image of Career Crossroads */}
         <div className="opportunities-graphic-column">
           <div className="graphic-backdrop bg-glow-blue"></div>
-          <img 
-            src={careerPathImg} 
-            alt="Choosing career paths in IT illustration" 
+          <img
+            src={careerPathImg}
+            alt="Choosing career paths in IT illustration"
             className="opportunities-banner-img animate-float"
           />
         </div>
@@ -31,7 +27,7 @@ export default function Opportunities() {
           <h2 className="opportunities-heading">
             Our <span>Vision & Mission</span>
           </h2>
-          
+
           {/* Vision Card Block */}
           <div className="vision-statement-card">
             <div className="vision-quote-icon">

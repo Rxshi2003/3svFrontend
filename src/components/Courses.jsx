@@ -1,126 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Courses.css';
+import { COURSES_DATA, COURSE_CATEGORIES } from '../constants/constcourses.jsx';
 
 export default function Courses() {
-  const coursesData = [
-    {
-      title: "Management Courses",
-      duration: "Professional",
-      color: "java-theme",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-          <circle cx="9" cy="7" r="4"></circle>
-          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg>
-      ),
-      skills: ["Strategic Planning", "Business Leadership", "Operations Management", "Organizational Behavior", "Finance Basics", "Marketing Strategy", "Performance Audits"]
-    },
-    {
-      title: "Logistics & Supply Chain Management Courses",
-      duration: "Certification",
-      color: "python-theme",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="1" y="3" width="15" height="13"></rect>
-          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-          <circle cx="5.5" cy="18.5" r="2.5"></circle>
-          <circle cx="18.5" cy="18.5" r="2.5"></circle>
-        </svg>
-      ),
-      skills: ["Supply Chain Operations", "Inventory Optimization", "Logistics & Warehousing", "Procurement Strategies", "Global Distribution", "Vendor Management", "Freight & Transport"]
-    },
-    {
-      title: "Lean Six Sigma and Quality Management Course",
-      duration: "Quality Audit",
-      color: "devops-theme",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-        </svg>
-      ),
-      skills: ["Six Sigma Methodology", "DMAIC Framework", "Process Mapping", "Statistical Analysis", "Waste Elimination", "Kaizen Principles", "Quality Auditing"]
-    },
-    {
-      title: "Project Management Courses",
-      duration: "PM Competency",
-      color: "ds-theme",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-          <line x1="16" y1="2" x2="16" y2="6"></line>
-          <line x1="8" y1="2" x2="8" y2="6"></line>
-          <line x1="3" y1="10" x2="21" y2="10"></line>
-        </svg>
-      ),
-      skills: ["Project Lifecycle", "PMP Preparation", "Agile & Scrum Planning", "Resource Scheduling", "Risk Management", "Budget Optimization", "Team Leadership"]
-    },
-    {
-      title: "Technical and Programming Courses",
-      duration: "Core Tech",
-      color: "ml-theme",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <polyline points="16 18 22 12 16 6"></polyline>
-          <polyline points="8 6 2 12 8 18"></polyline>
-        </svg>
-      ),
-      skills: ["Logic & Algorithms", "Computer Programming", "Software Systems", "Databases & SQL", "Systems Architecture", "API Configurations", "Technical Deployments"]
-    },
-    {
-      title: "Advanced Excel Course",
-      duration: "Data Insights",
-      color: "testing-theme",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <line x1="18" y1="20" x2="18" y2="10"></line>
-          <line x1="12" y1="20" x2="12" y2="4"></line>
-          <line x1="6" y1="20" x2="6" y2="14"></line>
-        </svg>
-      ),
-      skills: ["Advanced Formulas", "VBA & Macros", "Power Query", "Pivot Charts", "Data Visualizations", "Data Modeling", "Dashboard Reporting"]
-    },
-    {
-      title: "Data/ Business and Functional Analytics",
-      duration: "Advanced Analytics",
-      color: "ds-theme",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
-          <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
-        </svg>
-      ),
-      skills: ["Business Analytics", "Functional Analytics", "Statistical Modeling", "Predictive Forecasting", "Data Visualisation", "Python/R Analytics", "Market Trends Analytics"]
-    },
-    {
-      title: "Digital Marketing Courses",
-      duration: "Marketing Tech",
-      color: "java-theme",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-        </svg>
-      ),
-      skills: ["SEO Optimization", "Search Engine Marketing", "Social Media Branding", "Content Creation", "Google Analytics", "Email Campaigns", "Digital Operations"]
-    },
-    {
-      title: "Computerized Accounting Courses",
-      duration: "Fin-Tech",
-      color: "python-theme",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-          <line x1="2" y1="10" x2="22" y2="10"></line>
-          <line x1="12" y1="4" x2="12" y2="20"></line>
-        </svg>
-      ),
-      skills: ["Tally & GST", "Bookkeeping Systems", "Financial Audits", "Taxation Principles", "Inventory Accounting", "Voucher Entry", "Balance Sheet Finalization"]
-    }
-  ];
+  const [activeCategory, setActiveCategory] = useState("All");
 
-  const handleEnquire = (courseName) => {
-    window.dispatchEvent(new CustomEvent('open-enquiry', { detail: { course: courseName } }));
+  const filteredCourses = COURSES_DATA.filter(course => {
+    if (activeCategory === "All") return true;
+    return course.category === activeCategory;
+  });
+
+  const handleEnquire = (courseTitle, extraInfo = '') => {
+    const fullCourseName = extraInfo ? `${courseTitle} (${extraInfo})` : courseTitle;
+    window.dispatchEvent(new CustomEvent('open-enquiry', { detail: { course: fullCourseName } }));
+  };
+
+  const handleViewCourse = (courseId) => {
+    // Fire custom event so App.jsx sets route immediately (no hashchange delay)
+    window.dispatchEvent(new CustomEvent('app-navigate', {
+      detail: {
+        hash: `#/courses/${courseId}`,
+        route: { path: 'course-detail', param: courseId }
+      }
+    }));
   };
 
   return (
@@ -129,47 +31,111 @@ export default function Courses() {
         <div className="section-header">
           <span className="section-subtitle">EXPLORE OUR PROGRAMS</span>
           <h2 className="section-title">
-            Popular Courses <span>Built For Everyone</span>
+            Industry Certification <span>& Master Programs</span>
           </h2>
           <p className="section-desc">
-            Acquire specialized technical training in highly demanded technologies. Learn from basics and build robust production-ready applications.
+            Structured competency pathways with modular subcourses, multi-level certifications, specialized domain analytics, and hands-on capstone projects.
           </p>
         </div>
 
+        {/* Category Filter Navigation */}
+        <div className="courses-category-bar">
+          {COURSE_CATEGORIES.map((cat, idx) => (
+            <button
+              key={idx}
+              className={`category-tab-btn ${activeCategory === cat ? 'active' : ''}`}
+              onClick={() => setActiveCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Clean Courses Grid */}
         <div className="courses-grid">
-          {coursesData.map((course, idx) => (
-            <div key={idx} className={`course-card glass ${course.color}`}>
+          {filteredCourses.map((course) => (
+            <div key={course.id} className={`course-card glass ${course.theme}`}>
               <div className="card-top">
-                <div className="course-icon-bg">
-                  {course.icon}
-                </div>
-                <span className="course-duration-badge">{course.duration}</span>
+                <span className="course-badge">{course.badge}</span>
+                <span className="course-duration-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  {course.duration}
+                </span>
               </div>
-              
-              <h3 className="course-card-title">{course.title}</h3>
-              
+
+              <h3 
+                className="course-card-title clickable-title" 
+                onClick={() => handleViewCourse(course.id)}
+                title="Click to view 3 levels & full course details"
+              >
+                {course.title}
+                <svg className="title-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </h3>
+
+              <p className="course-card-desc">{course.description}</p>
+
               <div className="syllabus-divider"></div>
-              
-              <div className="syllabus-preview">
-                <h4>What you will learn:</h4>
-                <div className="skills-tags-grid">
-                  {course.skills.map((skill, sIdx) => (
-                    <span key={sIdx} className="skill-item">{skill}</span>
-                  ))}
+
+              {/* Display module name previews for flat-subject programs */}
+              {course.modules && (
+                <div className="levels-preview-box">
+                  <h4 className="sub-heading">Courses Included:</h4>
+                  <div className="levels-badges-grid">
+                    {course.modules.slice(0, 4).map((mod, mIdx) => (
+                      <div key={mIdx} className={`level-preview-badge ${mod.isCapstone ? 'capstone-badge' : ''}`} onClick={() => handleViewCourse(course.id)}>
+                        <span className="level-preview-num">{mIdx + 1}</span>
+                        <span className="level-preview-text">{mod.name}</span>
+                      </div>
+                    ))}
+                    {course.modules.length > 4 && (
+                      <div className="level-preview-badge more-badge" onClick={() => handleViewCourse(course.id)}>
+                        <span className="level-preview-text">+{course.modules.length - 4} more</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-              
+              )}
+
+              {/* Display level preview badges for tiered programs */}
+              {course.levels && (
+                <div className="levels-preview-box">
+                  <h4 className="sub-heading">Course Structure (Click to Explore):</h4>
+                  <div className="levels-badges-grid">
+                    {course.levels.map((lvl, lIdx) => (
+                      <div key={lIdx} className="level-preview-badge" onClick={() => handleViewCourse(course.id)}>
+                        <span className="level-preview-num">{lvl.levelNumber || lIdx + 1}</span>
+                        <span className="level-preview-text">{lvl.levelTitle.split('-')[1]?.trim() || lvl.levelTitle}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Specializations Quick Chips */}
+              {course.specializations && (
+                <div className="specialization-section">
+                  <h4 className="sub-heading">Specializations Available:</h4>
+                  <div className="specialization-chips">
+                    {course.specializations.map((spec, spIdx) => (
+                      <span key={spIdx} className="spec-chip">
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="card-actions">
-                <button className="card-cta-primary" onClick={() => handleEnquire(course.title)}>
-                  Enquire Now
+                <button className="card-cta-primary" onClick={() => handleViewCourse(course.id)}>
+                  View 3 Levels & Syllabus →
                 </button>
                 <button className="card-cta-secondary" onClick={() => handleEnquire(course.title)}>
-                  Syllabus
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                  </svg>
+                  Quick Enquiry
                 </button>
               </div>
             </div>

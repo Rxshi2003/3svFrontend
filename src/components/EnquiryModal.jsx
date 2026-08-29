@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './EnquiryModal.css';
+import { COURSES_DATA } from '../constants/constcourses.jsx';
 
 export default function EnquiryModal() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCourse, setSelectedCourse] = useState('Management Courses');
+  const [selectedCourse, setSelectedCourse] = useState(COURSES_DATA[0].title);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -41,7 +42,7 @@ export default function EnquiryModal() {
 
   return (
     <>
-      {/* 1. Sticky Vertical 'Enquire Now!' Tab */}
+      {/* Sticky Vertical 'Enquire Now!' Tab */}
       <button 
         className="sticky-enquire-tab"
         onClick={() => setIsOpen(true)}
@@ -50,7 +51,7 @@ export default function EnquiryModal() {
         Enquire Now!
       </button>
 
-      {/* 3. Enquiry Modal Backdrop & Form */}
+      {/* Enquiry Modal Backdrop & Form */}
       {isOpen && (
         <div className="modal-backdrop" onClick={() => setIsOpen(false)}>
           <div className="modal-content glass animate-slide-up" onClick={(e) => e.stopPropagation()}>
@@ -117,20 +118,32 @@ export default function EnquiryModal() {
                   </div>
 
                   <div className="modal-form-group">
-                    <label htmlFor="modal-course">Course of Interest *</label>
+                    <label htmlFor="modal-course">Course / Subcourse of Interest *</label>
                     <select
                       id="modal-course"
                       value={selectedCourse}
                       onChange={(e) => setSelectedCourse(e.target.value)}
                     >
-                      <option value="Management Courses">Management Courses</option>
-                      <option value="Logistics & Supply Chain">Logistics & Supply Chain Management</option>
-                      <option value="Lean & Six Sigma">Lean & Six Sigma Course</option>
-                      <option value="Project Management">Project Management Courses</option>
-                      <option value="Technical & Programming">Technical Courses & Computer Programming</option>
-                      <option value="Excel & Analytics">Excel & Functional Analytics</option>
-                      <option value="Management Consulting">Management Education Consulting</option>
-                      <option value="Consulting & Service Management">Consulting, Training & Service Management</option>
+                      {/* Render pre-selected value if custom selection */}
+                      {!COURSES_DATA.some(c => c.title === selectedCourse) && (
+                        <option value={selectedCourse}>{selectedCourse}</option>
+                      )}
+                      
+                      {COURSES_DATA.map((course) => (
+                        <optgroup key={course.id} label={course.title}>
+                          <option value={course.title}>{course.title} ({course.duration})</option>
+                          {course.subcourses && course.subcourses.map((sub, sIdx) => (
+                            <option key={sIdx} value={`${course.title} - ${sub}`}>
+                              -- Subcourse: {sub}
+                            </option>
+                          ))}
+                          {course.levels && course.levels.map((lvl, lIdx) => (
+                            <option key={lIdx} value={`${course.title} - ${lvl.levelTitle}`}>
+                              -- Level: {lvl.levelTitle}
+                            </option>
+                          ))}
+                        </optgroup>
+                      ))}
                     </select>
                   </div>
 

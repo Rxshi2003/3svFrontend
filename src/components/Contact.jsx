@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css';
+import { COURSES_DATA } from '../constants/constcourses.jsx';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -109,14 +110,21 @@ export default function Contact() {
                     value={formData.course}
                     onChange={handleChange}
                   >
-                    <option value="Management Courses">Management Courses</option>
-                    <option value="Logistics & Supply Chain">Logistics & Supply Chain Management</option>
-                    <option value="Lean & Six Sigma">Lean & Six Sigma Course</option>
-                    <option value="Project Management">Project Management Courses</option>
-                    <option value="Technical & Programming">Technical Courses & Computer Programming</option>
-                    <option value="Excel & Analytics">Excel & Functional Analytics</option>
-                    <option value="Management Consulting">Management Education Consulting</option>
-                    <option value="Consulting & Service Management">Consulting, Training & Service Management</option>
+                    {COURSES_DATA.map((course) => (
+                      <optgroup key={course.id} label={course.title}>
+                        <option value={course.title}>{course.title} ({course.duration})</option>
+                        {course.subcourses && course.subcourses.map((sub, sIdx) => (
+                          <option key={sIdx} value={`${course.title} - ${sub}`}>
+                            -- Subcourse: {sub}
+                          </option>
+                        ))}
+                        {course.levels && course.levels.map((lvl, lIdx) => (
+                          <option key={lIdx} value={`${course.title} - ${lvl.levelTitle}`}>
+                            -- Level: {lvl.levelTitle}
+                          </option>
+                        ))}
+                      </optgroup>
+                    ))}
                   </select>
                 </div>
 

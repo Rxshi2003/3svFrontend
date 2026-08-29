@@ -23,24 +23,23 @@ export default function Footer({ onNavClick }) {
 
         {/* Col 2: Course Catalog 1 */}
         <div className="footer-col list-col">
-          <h4>Management Tracks</h4>
+          <h4>Management & Analytics</h4>
           <ul>
-            <li><button onClick={() => handleLinkClick('courses')}>Management Courses</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Logistics & Supply Chain Courses</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Lean Six Sigma and Quality Management Course</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Project Management Courses</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Excel Courses (45 Hours)</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Management Analytics & Business Excellence</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Logistics & Supply Chain Management</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Lean & Six Sigma Belt Programs</button></li>
           </ul>
         </div>
 
         {/* Col 3: Course Catalog 2 */}
         <div className="footer-col list-col">
-          <h4>Technical & Analytics</h4>
+          <h4>Specialized Tracks</h4>
           <ul>
-            <li><button onClick={() => handleLinkClick('courses')}>Technical and Programming Courses</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Advanced Excel Course</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Data/ Business and Functional Analytics</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Digital Marketing Courses</button></li>
-            <li><button onClick={() => handleLinkClick('courses')}>Computerized Accounting Courses</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Quality & Operational Excellence</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Digital Marketing Certifications</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>Project Management Tracks</button></li>
+            <li><button onClick={() => handleLinkClick('courses')}>45-Hour Certificate Modules</button></li>
           </ul>
         </div>
 
