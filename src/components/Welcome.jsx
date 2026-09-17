@@ -1,6 +1,6 @@
 import React from 'react';
 import './Welcome.css';
-import welcomeImg from '../assets/welcome_climb.png';
+import { welcomeImg } from '../constants/constgeneratedassets.jsx';
 
 export default function Welcome() {
   return (

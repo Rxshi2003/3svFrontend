@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
-import heroBanner from '../assets/hero_banner.png';
+import { heroBanner } from '../constants/constgeneratedassets.jsx';
 
 import { slides } from '../constants/consthero.jsx';
 

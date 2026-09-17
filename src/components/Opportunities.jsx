@@ -1,6 +1,6 @@
 import React from 'react';
 import './Opportunities.css';
-import careerPathImg from '../assets/career_path.png';
+import { careerPathImg } from '../constants/constgeneratedassets.jsx';
 
 import { missionPoints } from '../constants/constopportunities.jsx';
 
