@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
-import heroBanner from 'C:/Users/HP/.gemini/antigravity-ide/brain/8a36b3f9-f036-4342-84ec-de75fd142537/hero_banner_1783958302518.png';
+import heroBanner from '../assets/hero_banner.png';
 
 import { slides } from '../constants/consthero.jsx';
 

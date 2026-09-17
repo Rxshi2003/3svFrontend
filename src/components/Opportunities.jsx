@@ -1,6 +1,6 @@
 import React from 'react';
 import './Opportunities.css';
-import careerPathImg from 'C:/Users/HP/.gemini/antigravity-ide/brain/8a36b3f9-f036-4342-84ec-de75fd142537/career_path_1783958329881.png';
+import careerPathImg from '../assets/career_path.png';
 
 import { missionPoints } from '../constants/constopportunities.jsx';
 

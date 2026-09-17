@@ -1,6 +1,6 @@
 import React from 'react';
 import './Welcome.css';
-import welcomeImg from 'C:/Users/HP/.gemini/antigravity-ide/brain/8a36b3f9-f036-4342-84ec-de75fd142537/welcome_climb_1783958316263.png';
+import welcomeImg from '../assets/welcome_climb.png';
 
 export default function Welcome() {
   return (
